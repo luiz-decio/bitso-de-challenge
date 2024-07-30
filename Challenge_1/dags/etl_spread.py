@@ -1,7 +1,6 @@
 from airflow import DAG
-from airflow.operators.python_operator import PythonOperator
+from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
-from main import main
 
 default_args = {
     'owner': 'airflow',
@@ -16,12 +15,18 @@ dag = DAG(
     'get_orders_spread',
     default_args = default_args,
     description = 'Get the spread from orders each 10 minutes.',
-    schedule_interval = timedelta(minutes = 10),
+    schedule_interval = '*/10 * * * *',
     catchup = False
 )
 
-def run_pipeline():
-    observations = []
+run_etl_spread_btc_mxn = BashOperator(
+    task_id = 'run_etl_spread_btc_mxn',
+    bash_command = 'python /usr/local/airflow/src/etl_btc_mxn.py',
+    dag = dag
+)
 
-    for _ in range(600):
-        pass
+run_etl_spread_usd_mxn = BashOperator(
+    task_id = 'run_etl_spread_usd_mxn',
+    bash_command = 'python /usr/local/airflow/src/etl_usd_mxn.py',
+    dag = dag
+)

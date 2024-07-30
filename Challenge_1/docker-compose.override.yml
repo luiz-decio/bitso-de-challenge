@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  webserver:
+    volumes:
+      - ../Challenge_1/src:/usr/local/airflow/src
+      - ../Challenge_1/data:/usr/local/airflow/data
+      - ../Challenge_1/logs:/usr/local/airflow/logs
+  scheduler:
+    volumes:
+      - ../Challenge_1/src:/usr/local/airflow/src
+      - ../Challenge_1/data:/usr/local/airflow/data
+      - ../Challenge_1/logs:/usr/local/airflow/logs
+  triggerer:
+    volumes:
+      - ../Challenge_1/src:/usr/local/airflow/src
+      - ../Challenge_1/data:/usr/local/airflow/data
+      - ../Challenge_1/logs:/usr/local/airflow/logs
