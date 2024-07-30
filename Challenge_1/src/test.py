@@ -24,8 +24,30 @@ def get_order_book(book: str) -> dict:
     else:
         raise Exception(f"Failed to fetch data: {response.status_code} {response.text}")
 
+def calculate_spread(order_book):
+    try:
+        bids = order_book['payload']['bids']
+        asks = order_book['payload']['asks']
+
+        # Find the best bid and best ask and convert to float
+        best_bid = max(float(bid['price']) for bid in bids)
+        best_ask = min(float(ask['price']) for ask in asks)
+
+        # Calculate the spread
+        spread = (best_ask - best_bid) * 100 / best_ask
+        return best_ask, best_bid, spread
+
+    except KeyError as e:
+        raise Exception(f"Key error when calculating the spread: {e}")
+    except Exception as e:
+        raise Exception(f"Error when calculating spread: {e}")
+
 try:
     order_book = get_order_book("btc_mxn")
-    print(order_book)
+    best_ask, best_bid, spread = calculate_spread(order_book)
 except Exception as e:
     print(e)
+
+print(f"best ask: {best_ask}")
+print(f"best bid: {best_bid}")
+print(f"spread: {spread}")
