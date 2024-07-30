@@ -69,18 +69,24 @@ Challenge_1
    ```bash
     pip install requirements.txt
    ```
-4. **Build and Start the Docker Containers**
+4. **Initialize the airflow environment**
+
+   Use the Astronomer CLI to build the airflow dependencies and create the directories:
+   ```bash
+    astro dev init
+   ```
+5. **Build and Start the Docker Containers**
 
    Use the Astronomer CLI to start the Docker containers:
    ```bash
-    pip install requirements.txt
+    astro dev start
    ```
-5. **Access the Airflow UI**
+6. **Access the Airflow UI**
 
    Open your browser and go to http://localhost:8080 to access the Airflow UI. The default login credentials are:
    - Username: `admin`
    - Password: `admin`
-6. **Trigger the DAG**
+7. **Trigger the DAG**
 
    In the Airflow UI, you should see a DAG named bitso_order_book. Turn it on and trigger it manually to start the data collection process.
 
