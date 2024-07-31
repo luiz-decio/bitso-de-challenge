@@ -25,7 +25,7 @@ logging.basicConfig(
 )
 
 # Load the API key and secret
-load_dotenv(os.path.join(os.getcwd(), 'Challenge_1', 'src', '.env'))
+load_dotenv(os.path.join(os.getcwd(), 'Challenge_1', '.env'))
 
 API_KEY = os.getenv('API_KEY')
 API_SECRET = os.getenv("API_SECRET")
