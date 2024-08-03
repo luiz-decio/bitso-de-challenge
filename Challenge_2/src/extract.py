@@ -10,13 +10,13 @@ date_stamp = datetime.now().strftime("%Y%m%d%H%M%S")
 log_dir = "/usr/local/airflow/logs/etl_finance"
 os.makedirs(log_dir, exist_ok=True)
 logging.basicConfig(
-    filename=os.path.join(log_dir, f'{date_stamp}_etl_order_books.log'),
+    filename=os.path.join(log_dir, f'{date_stamp}_{__name__}.log'),
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
 # File paths
-path_prefix = 'Challenge_2/data'
+path_prefix = '/usr/local/airflow/data'
 
 deposit_file =  f'{path_prefix}/landing/deposit_sample_data.csv'
 event_file =  f'{path_prefix}/landing/event_sample_data.csv'

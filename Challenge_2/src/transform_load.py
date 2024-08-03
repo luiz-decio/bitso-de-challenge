@@ -3,21 +3,20 @@ import logging
 import os
 from datetime import datetime
 
-# Get the directory of the current script
-script_dir = os.path.dirname(os.path.abspath(__name__))
-
-# Configure logging to save logs in the "logs" folder next to the "src" folder
+# Define the date to save the files
 date_stamp = datetime.now().strftime("%Y%m%d%H%M%S")
-log_dir = r'Challenge_2/logs' #os.path.join(script_dir, 'Challenge_2', 'logs')
+
+# Configure logging
+log_dir = "/usr/local/airflow/logs/etl_finance"
 os.makedirs(log_dir, exist_ok=True)
 logging.basicConfig(
-    filename=os.path.join(log_dir, f'{date_stamp}_etl_transform.log'),
+    filename=os.path.join(log_dir, f'{date_stamp}_{__name__}.log'),
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
 # File paths
-path_prefix = 'Challenge_2/data'
+path_prefix = '/usr/local/airflow/data'
 
 deposits_raw =  f'{path_prefix}/raw/raw_deposits.csv'
 events_raw =  f'{path_prefix}/raw/raw_events.csv'
