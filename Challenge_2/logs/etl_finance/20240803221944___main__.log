@@ -1,0 +1,12 @@
+2024-08-03 22:19:48,257 - INFO - Deposit data read successfully.
+2024-08-03 22:19:48,470 - INFO - Event data read successfully.
+2024-08-03 22:19:48,504 - INFO - User data read successfully.
+2024-08-03 22:19:48,528 - INFO - Withdrawal data read successfully.
+2024-08-03 22:19:54,841 - INFO - Deposit data normalized successfully.
+2024-08-03 22:19:54,865 - INFO - Event data normalized successfully.
+2024-08-03 22:19:54,866 - INFO - User data normalized successfully.
+2024-08-03 22:19:54,882 - INFO - Withdrawal data normalized successfully.
+2024-08-03 22:20:12,654 - INFO - Deposit data saved successfully.
+2024-08-03 22:20:13,758 - INFO - Event data saved successfully.
+2024-08-03 22:20:13,931 - INFO - User data saved successfully.
+2024-08-03 22:20:14,018 - INFO - Withdrawal data saved successfully.
