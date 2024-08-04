@@ -1,6 +1,6 @@
-# Bitso Order Book Spread Monitor
+# Bitso Data Engineer Challenges
 
-## Challenge 1
+# Challenge 1
 
 ## Project Overview
 
@@ -98,7 +98,8 @@ Challenge_1
 
 The output files are stored in a directory structure that simulates partitions in S3. The partitions are organized by year, month, day, and hour, making it easy to query specific time ranges.
 
-## Challenge 2
+
+# Challenge 2
 
 It was used a star schema for the data model, which includes two fact tables and two dimension tables:
 
